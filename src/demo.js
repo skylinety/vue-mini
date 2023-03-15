@@ -12,8 +12,8 @@ const skyline = new vue({
   },
   props: {},
 })
-skyline._data.test = 2
-// skyline.test = 2
-skyline._data.test = { c: 2, d: 3 }
-skyline._data.testObj.b.push({c:222})
-console.log('demo.js第14行:::skyline', skyline)
+// skyline._data.test = 2
+skyline.test = 2
+console.log('demo.js第17行:::skyline.test', skyline.test);
+console.log('demo.js第17行:::skyline.test', skyline.testObj);
+console.log('demo.js第18行:::s', skyline);

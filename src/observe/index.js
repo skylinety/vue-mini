@@ -10,6 +10,10 @@ export function observe(data) {
 
 class Observer {
   constructor(data) {
+    Object.defineProperty(data, '__ob__', {
+      enumerable: false,
+      value: this,
+    })
     if (data instanceof Array) {
       // 拓展数组原型链，便于进行数组方法劫持
       data.__proto__ = newArr

@@ -7,9 +7,9 @@ export function initState(vm) {
 }
 
 function initData(vm, data) {
-  const _data = vm._data = typeof data === 'function' ? data.call(vm) : data
+  const _data = (vm._data = typeof data === 'function' ? data.call(vm) : data)
   const o = observe(_data)
-  // proxy(o, vm)
+  proxy(_data, vm)
 }
 
 function proxy(renter, rentee) {
