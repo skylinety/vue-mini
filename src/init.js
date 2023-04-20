@@ -1,7 +1,7 @@
 import { initState } from './initState'
+import { compileTemplate } from "./compile/index";
 export function initMixin(Vue) {
   Vue.prototype._init = function (options) {
-    // this.stateMixin(this)
     const vm = this
     vm.$options = options
     initState(vm)
@@ -11,7 +11,6 @@ export function initMixin(Vue) {
   }
 
   Vue.prototype.$mount = function (el) {
-    // this.stateMixin(this)
     let { template, render } = this.$options
 
     if (typeof el == 'string') {
@@ -26,7 +25,3 @@ export function initMixin(Vue) {
   }
 }
 
-function compileTemplate(template) {
-  console.log('init.js第21行:::template', template)
-  return 1
-}
